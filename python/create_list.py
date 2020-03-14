@@ -26,4 +26,5 @@ def main():
     else:
         create_list(installpath, destpath)
 
-main()
+if __name__ == '__main__':
+    main()

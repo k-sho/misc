@@ -22,7 +22,7 @@ def artifact_check(source1, source2, dscale=100000):
 
     df_zero = df_diff.query("size_x == 0 or size_y == 0")
     if df_zero.empty == False:
-        print("Size of following files are zero byte.")
+        print("The following files are empty.")
         print(df_zero)
 
 def main():
@@ -37,4 +37,5 @@ def main():
     else:
         artifact_check(args.left, args.right, args.dscale)
 
-main()
+if __name__ == '__main__':
+    main()
