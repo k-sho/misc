@@ -20,6 +20,11 @@ def artifact_check(source1, source2, dscale=100000):
     print("The following files are %d bytes smaller than right." % dscale)
     print(df_diff.query("size_y - size_x <= -1 * %d" % dscale))
 
+    df_zero = df_diff.query("size_x == 0 or size_y == 0")
+    if df_zero.empty == False:
+        print("Size of following files are zero byte.")
+        print(df_zero)
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('left', type=str)
